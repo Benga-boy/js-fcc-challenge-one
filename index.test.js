@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 const { expect } = require('@jest/globals')
-const { factorialize, repeatStringNumTimes, convertToF, findElement } = require('./index')
+const { factorialize, repeatStringNumTimes, convertToF, findElement, largestOfFour, findLongestWordLength } = require('./index')
 
 // ! Test for factorialize
 test('Check factorialize is a function', () => {
@@ -38,6 +38,27 @@ test('Check findElement is a function ', () => {
 test('should return the first element the function argument passed to be true in initial array', () => {
   expect(findElement([1, 2, 3, 4], num => num % 2 === 0)).toBe(2)
 })
+
+// ! Test for largestOfFour
+test('Check largestOfFour  is a function', () => {
+  expect(typeof largestOfFour).toEqual('function')
+})
+
+test('should return the largest number in each array of arrays', () => {
+  expect(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])).toEqual([5, 27, 39, 1001])
+})
+
+
+// ! Test for findLongestWordLength
+test('Check findLongestWordLength is a function', () => {
+  expect(typeof findLongestWordLength).toEqual('function')
+})
+
+test('should return the longest word in a string', () => {
+  expect(findLongestWordLength('The quick brown fox jumped over the lazy dog')).toBe(6)
+})
+
+
 
 
 
